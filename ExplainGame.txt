@@ -1,0 +1,66 @@
+                                        Game of Elimination:(Using Language c(TURBOC))
+					---------------------------------------------
+	                                
+					This game is implemented using circular linklist.
+
+
+* Players have two choice while he/she is playing game.
+
+
+1)START:-
+	   once you select this option,it will ask you to enter no. of player(i.e.say M) and his name.After this you have to select a random no.(i.e.say N) which is less than the no. of players in the game(i.e say N<M) and game will start to eliminate player until one which is left in the game and will be declared as winner.
+2)QUIT:-
+	   To quit the game.
+
+
+* The algorithm used to implement this game is as followed.
+
+	*For insertion of new node.
+		
+                procedure insert() 	
+
+		step 1 : if list is empty then new node first=new;
+	
+			 if(first == null) then
+			 first=new1;
+
+
+		step 2 : if the node  exists then traverse the list upto the last node(Here temp is temporary node for traversal ).
+
+			 temp=first->new1;
+	                 while(temp->new1!=first)
+     					temp=temp->new1;
+     		
+     			 new1->new1=temp->new1;
+     		         temp->new1=new1;
+	
+		step 3:  end	
+	
+	*For deletion of a node(Here nth position is the position of node that we want to delete).
+ 
+                     ==>procedure elimination(nth position)
+
+		step 1:	while(first->new1!=first)
+				
+				if frist position then
+					temp=first->new1;
+					
+					while(temp!=first)
+					prev=temp;
+					temp=temp->new1;
+					prev->new1=temp->new1;
+					first=prev->new1;
+					
+
+				else
+					temp=first;
+					
+					for 1 t0 nth position
+						prev=temp;
+						temp=temp->new1 //end of for
+					
+					prev->new1=temp->new1;
+					first=prev->new1;      	
+						
+		step 2 : end.	
+

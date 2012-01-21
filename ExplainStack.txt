@@ -1,0 +1,67 @@
+				IMPLEMETATION OF STACK(USING C(TURBOC))
+				--------------------------------------
+
+  * STACK:LAST IN FIRST OUT.
+      
+	  > For implementation of stack using link list, uses structure given as follow.
+
+		struct node
+		{
+		int info;
+		struct node *link;
+		struct node *first=NULL;
+		struct node *new1;
+		struct node *temp;
+		struct node *prev;
+		};
+                    
+	  > In this structure first is first node,new1 is new node,temp is temp node used for traversing a list until last node not found and prev is prev node.   
+
+
+	  > The push and pop function are use for implementation of stack which are given as follow. 
+
+
+
+
+  * function push(data)  //this function is used to push data into stack
+
+  	
+			step 1: if  first==NULL then
+        			first=new1;  
+
+    				else
+    				temp=first;
+				
+				for 1 to temp!=NULL 
+				temp=temp->link;	
+				temp->link=new1;
+			
+		       step 2: end.
+    
+
+
+  * function pop()      //this function is used to pop data from stack
+
+  	  	
+		      step 1 :  if  first==NULL then
+          			return -1;
+  
+  	  			else
+     	 			temp=first;
+		     	 	
+				for 1 to temp!=NULL
+         			prev=temp;
+         			temp=temp->link;
+
+		      step 2 :  if temp==first then
+         	                data=temp->info;
+                		return data; 
+    
+    	  			else
+    
+      				data=temp->info;
+      				prev->link=temp->link;
+    
+    				return data;
+  
+		      step 3 :  end.
